@@ -29,13 +29,7 @@ shape = "Beam"
 shape = "Beam"
 
 [font]
-size = 15
-offset.y = 8
-normal = { family = "CascadiaCode", style = "Regular" }  
-bold = { style = "Bold" }  
-italic = { style = "Italic" } 
-bold_italic = { style = "Bold Italic" }  
-
+size = 14
 
 [[keyboard.bindings]]
 action = "SpawnNewInstance"
@@ -81,13 +75,13 @@ mods = "Command"
 
 [window]
 decorations = "full"
-# dynamic_padding = true
+dynamic_padding = true
 opacity = 0.85
 
 [window.dimensions]
 columns = 65
 lines = 18
 
-# [window.padding]
-# x = 10
-# y = 10
+[window.padding]
+x = 10
+y = 10
