@@ -33,13 +33,14 @@ return {
 				operators = {},
 			},
 			color_overrides = {},
-			custom_highlights = {
+			-- For transparent
+			--[[custom_highlights = {
 				Visual = { bg = "#747474" },
 				LineNr = { fg = "#aeb0b7" },
 				EndOfBuffer = { fg = "#aeb0b7" },
 				Comment = { fg = "#aeb0b7" },
 				Search = { bg = "#865e91" },
-			},
+			},--]]
 			integrations = {
 				treesitter = true,
 			},

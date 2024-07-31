@@ -82,6 +82,6 @@ opacity = 0.85
 columns = 65
 lines = 18
 
-[window.padding]
-x = 10
-y = 10
+# [window.padding]
+# x = 10
+# y = 10
