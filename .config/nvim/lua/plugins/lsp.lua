@@ -13,6 +13,7 @@ return {
 				"tsserver",
 				"lua_ls",
 				"tailwindcss",
+				"jsonls",
 			},
 			auto_install = true,
 		},
@@ -59,6 +60,7 @@ return {
 			lspconfig.tsserver.setup({})
 			lspconfig.lua_ls.setup({})
 			lspconfig.tailwindcss.setup({})
+			lspconfig.jsonls.setup({})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
