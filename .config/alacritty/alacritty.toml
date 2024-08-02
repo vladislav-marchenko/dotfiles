@@ -29,7 +29,12 @@ shape = "Beam"
 shape = "Beam"
 
 [font]
-size = 14
+size = 15
+offset.y = 8
+normal = { family = "CascadiaCode NF", style = "Regular" }  
+bold = { style = "Bold" }  
+italic = { style = "Italic" } 
+bold_italic = { style = "Bold Italic" }  
 
 [[keyboard.bindings]]
 action = "SpawnNewInstance"
