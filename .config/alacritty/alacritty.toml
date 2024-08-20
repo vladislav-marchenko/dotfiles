@@ -1,3 +1,5 @@
+shell = "/usr/bin/zsh"
+
 [colors.bright]
 black = "0x686868"
 blue = "0x59C2FF"
@@ -31,10 +33,11 @@ shape = "Beam"
 [font]
 size = 15
 offset.y = 8
-normal = { family = "CascadiaCode NF", style = "Regular" }  
-bold = { style = "Bold" }  
-italic = { style = "Italic" } 
-bold_italic = { style = "Bold Italic" }  
+normal = { family = "Cascadia Code", style = "Regular" }
+bold = { family = "Cascadia Code", style = "Bold" }
+italic = { family = "Cascadia Code", style = "Italic" }
+bold_italic = { family = "Cascadia Code", style = "Bold Italic" }
+
 
 [[keyboard.bindings]]
 action = "SpawnNewInstance"
