@@ -10,7 +10,7 @@ return {
     opts = {
       ensure_installed = {
         "pyright",
-        "tsserver",
+        "ts_ls",
         "lua_ls",
         "tailwindcss",
         "jsonls",
@@ -58,7 +58,7 @@ return {
       local lspconfig = require("lspconfig")
 
       lspconfig.pyright.setup({})
-      lspconfig.tsserver.setup({})
+      lspconfig.ts_ls.setup({})
       lspconfig.lua_ls.setup({})
       lspconfig.tailwindcss.setup({})
       lspconfig.jsonls.setup({})
