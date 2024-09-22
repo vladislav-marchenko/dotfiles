@@ -32,11 +32,11 @@ shape = "Beam"
 
 [font]
 size = 15
-offset.y = 8
-normal = { family = "Cascadia Code", style = "Regular" }
-bold = { family = "Cascadia Code", style = "Bold" }
-italic = { family = "Cascadia Code", style = "Italic" }
-bold_italic = { family = "Cascadia Code", style = "Bold Italic" }
+offset.y = 6
+normal = { family = "monospace", style = "Regular" }
+bold = { family = "monospace", style = "Bold" }
+italic = { family = "monospace", style = "Italic" }
+bold_italic = { family = "monospace", style = "Bold Italic" }
 
 
 [[keyboard.bindings]]
