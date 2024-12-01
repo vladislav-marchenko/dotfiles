@@ -11,7 +11,7 @@ vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 vim.opt.expandtab = true
 vim.opt.scrolloff = 3
-vim.cmd.colorscheme("catppuccin")
+vim.cmd.colorscheme("github_dark_default")
 vim.opt.termguicolors = true
 vim.opt.spelllang = "en_us,ru_ru"
 vim.opt.spell = true
