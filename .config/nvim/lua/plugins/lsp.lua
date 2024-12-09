@@ -10,9 +10,10 @@ return {
     opts = {
       ensure_installed = {
         "pyright",
+        "pylsp",
         "ts_ls",
-        "lua_ls",
         "tailwindcss",
+        "lua_ls",
         "jsonls",
         "cssls"
       },
@@ -58,7 +59,35 @@ return {
       local lspconfig = require("lspconfig")
 
       lspconfig.pyright.setup({})
-      lspconfig.ts_ls.setup({})
+      --[[lspconfig.pylsp.setup({})]]
+      lspconfig.ts_ls.setup({
+        settings = {
+          typescript = {
+            inlayHints = {
+              includeInlayParameterNameHints = 'all',
+              includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+              includeInlayFunctionParameterTypeHints = true,
+              includeInlayVariableTypeHints = true,
+              includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+              includeInlayPropertyDeclarationTypeHints = true,
+              includeInlayFunctionLikeReturnTypeHints = true,
+              includeInlayEnumMemberValueHints = true,
+            }
+          },
+          javascript = {
+            inlayHints = {
+              includeInlayParameterNameHints = 'all',
+              includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+              includeInlayFunctionParameterTypeHints = true,
+              includeInlayVariableTypeHints = true,
+              includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+              includeInlayPropertyDeclarationTypeHints = true,
+              includeInlayFunctionLikeReturnTypeHints = true,
+              includeInlayEnumMemberValueHints = true,
+            }
+          }
+        }
+      })
       lspconfig.lua_ls.setup({})
       lspconfig.tailwindcss.setup({})
       lspconfig.jsonls.setup({})

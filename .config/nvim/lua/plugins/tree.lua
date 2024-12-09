@@ -7,6 +7,10 @@ return {
     opts = {
       view = {
         side = 'right'
+      },
+      filters = {
+        dotfiles = false,
+        git_ignored = false,
       }
     },
     keys = {
