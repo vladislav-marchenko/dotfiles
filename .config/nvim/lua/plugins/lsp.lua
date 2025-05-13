@@ -1,17 +1,19 @@
 return {
   {
     "williamboman/mason.nvim",
+    version = "1.8.0",
     config = function()
       require("mason").setup()
     end,
   },
   {
     "williamboman/mason-lspconfig.nvim",
+    version = "1.30.0",
     opts = {
       ensure_installed = {
         "pyright",
         "pylsp",
-        "ts_ls",
+        "tsserver", -- ts_ls
         "tailwindcss",
         "lua_ls",
         "jsonls",
@@ -58,8 +60,8 @@ return {
     config = function()
       local lspconfig = require("lspconfig")
 
-      lspconfig.pyright.setup({})
-      --[[lspconfig.pylsp.setup({})]]
+      lspconfig.pylsp.setup({})
+      --[[lspconfig.pyright.setup({})]]
       lspconfig.ts_ls.setup({
         settings = {
           typescript = {
