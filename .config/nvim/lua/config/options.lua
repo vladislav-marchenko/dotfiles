@@ -13,5 +13,6 @@ vim.opt.expandtab = true
 vim.opt.scrolloff = 3
 vim.cmd.colorscheme("github_dark_dimmed")
 vim.opt.termguicolors = true
+vim.opt.keymap = "russian-jcukenwin"
 vim.opt.spelllang = "en_us,ru_ru"
 vim.opt.spell = true
