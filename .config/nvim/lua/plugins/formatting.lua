@@ -11,7 +11,8 @@ return {
         typescriptreact = { "prettier", stop_after_first = true },
         python = { "autopep8", "black", "isort", stop_after_first = true },
       },
-      format_after_save = {
+      format_on_save = {
+        timeout_ms = 3000,
         lsp_format = "fallback",
       },
     })
