@@ -1,6 +1,6 @@
 return {
 	"Exafunction/codeium.vim",
-	build = ":Codeium Auth",
+	event = "InsertEnter",
 	config = function()
 		-- Change '<C-g>' here to any keycode you like.
 		vim.keymap.set("i", "<C-g>", function()

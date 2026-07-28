@@ -58,11 +58,8 @@ return {
   {
     "neovim/nvim-lspconfig",
     config = function()
-      local lspconfig = require("lspconfig")
-
-      lspconfig.pylsp.setup({})
-      --[[lspconfig.pyright.setup({})]]
-      lspconfig.ts_ls.setup({
+      vim.lsp.config("pylsp", {})
+      vim.lsp.config("ts_ls", {
         settings = {
           typescript = {
             inlayHints = {
@@ -90,10 +87,9 @@ return {
           }
         }
       })
-      lspconfig.lua_ls.setup({})
-      lspconfig.tailwindcss.setup({})
-      lspconfig.jsonls.setup({})
-      lspconfig.cssls.setup({})
+      for _, server in ipairs({ "pylsp", "ts_ls", "lua_ls", "tailwindcss", "jsonls", "cssls" }) do
+        vim.lsp.enable(server)
+      end
 
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
