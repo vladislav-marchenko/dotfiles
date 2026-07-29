@@ -23,6 +23,17 @@ return {
 
     require("telescope").setup({
       defaults = {
+        layout_strategy = "flex",
+        path_display = { "filename_first" },
+        layout_config = {
+          flip_columns = 120,
+          horizontal = {
+            preview_cutoff = 1,
+          },
+          vertical = {
+            preview_cutoff = 1,
+          },
+        },
         mappings = {
           i = {
             -- j, k for normal mode and C-j, C-k for other modes

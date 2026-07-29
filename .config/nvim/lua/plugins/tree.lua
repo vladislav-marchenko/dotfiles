@@ -1,4 +1,4 @@
-local tree_width = 48
+local tree_width = "25%"
 
 local function remember_tree_width()
   for _, window in ipairs(vim.api.nvim_list_wins()) do
