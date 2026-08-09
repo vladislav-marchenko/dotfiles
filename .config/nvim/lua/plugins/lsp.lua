@@ -17,7 +17,8 @@ return {
         "tailwindcss",
         "lua_ls",
         "jsonls",
-        "cssls"
+        "cssls",
+        "eslint",
       },
       auto_install = true,
     },
@@ -58,7 +59,33 @@ return {
   {
     "neovim/nvim-lspconfig",
     config = function()
+      vim.diagnostic.config({
+        underline = {
+          severity = vim.diagnostic.severity.ERROR,
+        },
+        virtual_text = {
+          spacing = 2,
+          source = "if_many",
+        },
+        severity_sort = true,
+        float = {
+          border = "rounded",
+          source = "if_many",
+        },
+      })
+      vim.api.nvim_set_hl(0, "DiagnosticUnderlineError", {
+        undercurl = true,
+        underline = true,
+        sp = "#ff6b6b",
+      })
+
       vim.lsp.config("pylsp", {})
+      vim.lsp.config("eslint", {
+        settings = {
+          format = false,
+          workingDirectory = { mode = "auto" },
+        },
+      })
       vim.lsp.config("ts_ls", {
         settings = {
           typescript = {
@@ -87,7 +114,7 @@ return {
           }
         }
       })
-      for _, server in ipairs({ "pylsp", "ts_ls", "lua_ls", "tailwindcss", "jsonls", "cssls" }) do
+      for _, server in ipairs({ "pylsp", "ts_ls", "eslint", "lua_ls", "tailwindcss", "jsonls", "cssls" }) do
         vim.lsp.enable(server)
       end
 
