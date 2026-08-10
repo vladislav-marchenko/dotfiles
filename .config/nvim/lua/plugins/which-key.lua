@@ -1,6 +1,7 @@
 -- Подсказка по кеймапам: нажми <leader> (пробел) и подожди — всплывёт меню.
 -- <F1>       — все кеймапы с корня, включая не-leader (]h, gd, zz, <c-w>...)
--- <leader>?  — кеймапы текущего буфера (в панели diffview покажет i, s, S, X...)
+-- <leader>bk — кеймапы текущего буфера (в панели diffview покажет i, s, S, X...)
+--               НЕ вешать на "?": langmapper делает ему двойника <leader>, в рус. раскладке
 -- <leader>fk — полный поиск по всем кеймапам через telescope
 -- :WhichKey [keys] — то же самое командой, без биндинга
 
@@ -26,7 +27,7 @@ return {
       desc = "Все кеймапы (which-key)",
     },
     {
-      "<leader>?",
+      "<leader>bk",
       function()
         require("which-key").show({ global = false })
       end,
@@ -61,11 +62,12 @@ return {
       { "<leader>e", group = "explorer (nvim-tree)" },
       { "<leader>b", group = "buffer" },
       { "<leader>bu", desc = "Открыть последний закрытый буфер" },
+      { "<leader>bk", desc = "Кеймапы текущего буфера" },
       { "<leader>t", group = "toggle" },
       { "]", group = "next" },
       { "[", group = "prev" },
-      { "]h", desc = "Следующий хунк" },
-      { "[h", desc = "Предыдущий хунк" },
+      { "]h", desc = "Следующее изменение" },
+      { "[h", desc = "Предыдущее изменение" },
     },
   },
 }

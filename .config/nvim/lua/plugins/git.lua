@@ -30,29 +30,29 @@ return {
         end
       end
 
-      -- === Навигация по хункам ===
-      map("n", "]h", nav("next"), "Следующий хунк")
-      map("n", "[h", nav("prev"), "Предыдущий хунк")
+      -- === Навигация по изменениям ===
+      map("n", "]h", nav("next"), "Следующее изменение")
+      map("n", "[h", nav("prev"), "Предыдущее изменение")
 
       -- === Просмотр ===
-      map("n", "<leader>gp", gitsigns.preview_hunk, "Показать хунк (popup)")
-      map("n", "<leader>gP", gitsigns.preview_hunk_inline, "Показать хунк (inline)")
+      map("n", "<leader>gp", gitsigns.preview_hunk, "Показать изменение (popup)")
+      map("n", "<leader>gP", gitsigns.preview_hunk_inline, "Показать изменение (inline)")
       map("n", "<leader>gv", gitsigns.diffthis, "Diff файла vs index (split)")
       map("n", "<leader>gV", function()
         gitsigns.diffthis("~")
       end, "Diff файла vs HEAD (split)")
 
-      -- === Staging по хункам ===
-      map("n", "<leader>ga", gitsigns.stage_hunk, "Stage хунк")
+      -- === Staging по блокам изменений ===
+      map("n", "<leader>ga", gitsigns.stage_hunk, "Stage изменение")
       map("v", "<leader>ga", function()
         gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
       end, "Stage выделенные строки")
       map("n", "<leader>gA", gitsigns.stage_buffer, "Stage весь файл")
-      map("n", "<leader>gu", gitsigns.undo_stage_hunk or gitsigns.stage_hunk, "Отменить stage хунка")
+      map("n", "<leader>gu", gitsigns.undo_stage_hunk or gitsigns.stage_hunk, "Отменить stage изменения")
 
       -- === Откат изменений ===
       -- НЕ <leader>gr — он занят lsp_references в lsp.lua
-      map("n", "<leader>gx", gitsigns.reset_hunk, "Откатить хунк")
+      map("n", "<leader>gx", gitsigns.reset_hunk, "Откатить изменение")
       map("v", "<leader>gx", function()
         gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
       end, "Откатить выделенные строки")
@@ -69,8 +69,8 @@ return {
       end, "Git blame line")
       map("n", "<leader>tb", gitsigns.toggle_current_line_blame, "Toggle Git blame")
 
-      -- === Text object: ih — «внутри хунка» ===
-      map({ "o", "x" }, "ih", gitsigns.select_hunk, "Хунк (text object)")
+      -- === Text object: ih — «внутри блока изменений» ===
+      map({ "o", "x" }, "ih", gitsigns.select_hunk, "Блок изменений (text object)")
     end,
   },
 }
