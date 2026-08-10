@@ -51,11 +51,12 @@ return {
       map("n", "<leader>gu", gitsigns.undo_stage_hunk or gitsigns.stage_hunk, "Отменить stage хунка")
 
       -- === Откат изменений ===
-      map("n", "<leader>gr", gitsigns.reset_hunk, "Откатить хунк")
-      map("v", "<leader>gr", function()
+      -- НЕ <leader>gr — он занят lsp_references в lsp.lua
+      map("n", "<leader>gx", gitsigns.reset_hunk, "Откатить хунк")
+      map("v", "<leader>gx", function()
         gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
       end, "Откатить выделенные строки")
-      map("n", "<leader>gR", gitsigns.reset_buffer, "Откатить весь файл")
+      map("n", "<leader>gX", gitsigns.reset_buffer, "Откатить весь файл")
 
       -- === Список изменений ===
       map("n", "<leader>gq", function()

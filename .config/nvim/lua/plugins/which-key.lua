@@ -53,11 +53,14 @@ return {
       mappings = false, -- без иконок перед каждым пунктом
     },
     spec = {
-      { "<leader>g", group = "git" },
-      { "<leader>gd", desc = "Diff: рабочая копия vs HEAD" },
+      { "<leader>g", group = "git / lsp" },
+      { "<leader>gw", desc = "Diff: рабочая копия vs HEAD" },
+      { "<leader>gd", desc = "LSP: go to definition" },
+      { "<leader>gr", desc = "LSP: references" },
       { "<leader>f", group = "find / telescope" },
       { "<leader>e", group = "explorer (nvim-tree)" },
       { "<leader>b", group = "buffer" },
+      { "<leader>bu", desc = "Открыть последний закрытый буфер" },
       { "<leader>t", group = "toggle" },
       { "]", group = "next" },
       { "[", group = "prev" },

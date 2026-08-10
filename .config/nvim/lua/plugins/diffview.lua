@@ -46,11 +46,12 @@ return {
   keys = {
     -- === Diff ===
     {
-      "<leader>gd",
+      -- НЕ <leader>gd — он занят vim.lsp.buf.definition в lsp.lua
+      "<leader>gw",
       function()
         diffview()
       end,
-      desc = "Diff: рабочая копия vs HEAD",
+      desc = "Diff: рабочая копия (working tree) vs HEAD",
     },
     {
       "<leader>gs",
