@@ -124,7 +124,6 @@ return {
         require("telescope.builtin").lsp_references()
       end, { desc = "LSP references" })
       vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
-      vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, {})
     end,
   },
 }
