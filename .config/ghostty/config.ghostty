@@ -1,0 +1,58 @@
+# Ghostty config — перенесено из .config/alacritty/alacritty.toml
+# Ghostty >= 1.3 читает ~/.config/ghostty/config.ghostty
+# (на 1.2.x назови файл просто `config`).
+# После правок: Cmd+Shift+, — перезагрузить конфиг.
+
+# ── Shell ────────────────────────────────────────────────────────────
+command = /opt/homebrew/bin/fish
+
+# ── Font ─────────────────────────────────────────────────────────────
+# Bold / Italic / Bold Italic Ghostty подбирает из этого же семейства сам.
+font-family = Maple Mono NF
+font-size = 22
+# alacritty: font.offset.y = 6 (доп. пиксели к высоте строки).
+# В Ghostty текст при этом центрируется в ячейке, а не прижимается к низу.
+adjust-cell-height = 6
+
+# Alacritty не умеет лигатуры, Ghostty включает их по умолчанию,
+# а в Maple Mono они есть. Раскомментируй, чтобы было как раньше:
+# font-feature = -calt
+# font-feature = -liga
+# font-feature = -dlig
+
+# ── Colors ───────────────────────────────────────────────────────────
+# Другие встроенные темы: `ghostty +list-themes`
+# Можно и по системной теме: theme = light:GitHub Light Default,dark:GitHub Dark Default
+theme = GitHub Dark Default
+
+# ── Cursor ───────────────────────────────────────────────────────────
+cursor-style = bar
+# В Alacritty курсор не мигал по умолчанию, в Ghostty — мигает.
+cursor-style-blink = false
+
+# ── Window ───────────────────────────────────────────────────────────
+# Смена прозрачности на macOS применяется только после полного перезапуска Ghostty.
+background-opacity = 0.85
+# alacritty: window.dynamic_padding = true
+window-padding-balance = true
+# alacritty: window.dimensions (в ячейках сетки)
+window-width = 65
+window-height = 18
+
+# ── Keybindings ──────────────────────────────────────────────────────
+# Уже есть в Ghostty на macOS по умолчанию, поэтому не дублирую:
+#   Cmd+N          → новое окно            (alacritty: SpawnNewInstance)
+#   Cmd+Backspace  → \x15 (стереть до начала строки)
+#   Alt+←  / Alt+→ → ESC b / ESC f (по словам)
+
+# Option+Space на macOS даёт неразрывный пробел (U+00A0) — шлём обычный.
+keybind = alt+space=text:\x20
+
+# Cmd+← / Cmd+→ → Home / End.
+# Дефолт Ghostty тут шлёт Ctrl+A / Ctrl+E: в fish это ок, но в nvim
+# Ctrl+A в normal-режиме инкрементит число. Home/End работают и там, и там.
+keybind = super+arrow_left=csi:H
+keybind = super+arrow_right=csi:F
+
+# Cmd+R → ESC R (как было в alacritty)
+keybind = super+r=esc:R
